@@ -13,7 +13,7 @@ function JewelryDetail(props) {
                 <h3>{jewerly.name}</h3>
                 <h6>{jewerly.catagory}</h6>
                 <p>{jewerly.desc}</p>
-                <p><em>{jewerly.price}</em></p>
+                <p><em>${jewerly.price}</em></p>
                 <p>{jewerly.quantity}</p>
             </div>
         </React.Fragment>
