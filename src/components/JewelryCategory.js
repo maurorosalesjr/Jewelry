@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import bootstrap from 'bootstrap'
 
 
 function JewelryCategory(props){

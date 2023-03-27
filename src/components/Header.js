@@ -2,8 +2,19 @@ import React from "react";
 
 
 const headerStyle = {
-    textAlign: "center",
     fontFamily: "cursive",
+    color: "#a23cf0",
+}
+
+const headerName = {
+    textAlign: "left",
+    marginLeft: "2%",
+}
+
+const headerFluff = {
+    textAlign: "right",
+    marginRight: "2%",
+    marginTop: "-4%",
 }
 
 
@@ -11,7 +22,9 @@ function Header(){
     return(
         <React.Fragment>
             <div style={headerStyle} >
-                <h1>Tina Marie Jewelry</h1>
+                <h1 style={headerName}>Tina Marie Jewelry</h1>
+                {/* placeholders down */}
+                <h5 style={headerFluff}>Instagram Etsy Ebay</h5>
             </div>
         </React.Fragment>
     )
