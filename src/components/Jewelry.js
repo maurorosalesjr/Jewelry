@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const imgStyle ={
@@ -11,9 +12,11 @@ const imgStyle ={
 function Jewelry(props) {
     return(
         <React.Fragment>
-            <div onClick={() => props.whenJewelryClicked(props.id)}>
+            <div className="card">
+            <div className="card-body" onClick={() => props.whenJewelryClicked(props.id)}>
                 <img style={imgStyle} src={props.photo} alt={props.altTag} />
-                <p><em>{props.name}</em></p>
+                <p className="card-title"><em>{props.name}</em></p> 
+            </div>
             </div>
         </React.Fragment>
     )

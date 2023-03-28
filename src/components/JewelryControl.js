@@ -3,6 +3,7 @@ import React from "react";
 import JewelryDetail from "./JewelryDetail";
 import JewelryList from "./JewelryList";
 import mainJewelryList from "./MainJewelryList";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class JewelryControl extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class JewelryControl extends React.Component {
     } else {
       currentlyVisibleState = <JewelryList jewelryList={this.state.mainJewelryList}
                                             onJewelrySelection={this.handleChangingSelectedJewelry} />;
-      buttonText = "idk what this button does"
+      buttonText = "this button does nothing"
     }
 
 
