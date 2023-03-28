@@ -6,24 +6,20 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function JewelryList (props) {
     return (
         <React.Fragment>
-            {
-                <div className="row">
-                    {props.jewelryList.map((jewelry) =>
-                        <div className="col-mid-4">
-                            <Jewelry 
-                                whenJewelryClicked={props.onJewelrySelection}
-                                category={jewelry.category}
-                                name={jewelry.name}
-                                desc={jewelry.desc}
-                                price={jewelry.price}
-                                photo={jewelry.photo}
-                                altTag={jewelry.altTag}
-                                quantity={jewelry.quantity}
-                                id={jewelry.id}
-                                key={jewelry.id} />
-                        </div>
-                    )}
-                </div>
+            {props.jewelryList.map((jewelry) =>
+                <Jewelry 
+                    whenJewelryClicked={props.onJewelrySelection}
+                    whenSaleClicked={props.onClickingSubtract}
+                    category={jewelry.category}
+                    name={jewelry.name}
+                    desc={jewelry.desc}
+                    price={jewelry.price}
+                    photo={jewelry.photo}
+                    altTag={jewelry.altTag}
+                    quantity={parseInt(jewelry.quantity)}
+                    id={jewelry.id}
+                    key={jewelry.id} />
+                    )               
             }
         </React.Fragment>
     );
@@ -32,6 +28,8 @@ function JewelryList (props) {
 JewelryList.propTypes = {
     jewelryList: PropTypes.array,
     onJewelrySelection: PropTypes.func,
+    onSaleClicked: PropTypes.func,
+
 }
 
 export default JewelryList;

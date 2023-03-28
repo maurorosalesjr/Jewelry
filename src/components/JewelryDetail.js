@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
+
 function JewelryDetail(props) {
-    const { jewerly } = props;
+    const { jewerly, } = props;
 
 
     return(
@@ -15,6 +16,7 @@ function JewelryDetail(props) {
                 <p>{jewerly.desc}</p>
                 <p><em>${jewerly.price}</em></p>
                 <p>{jewerly.quantity}</p>
+                {/* <button onClick={()=> whenSaleClicked(jewerly.id)}>Quick Buy</button> */}
             </div>
         </React.Fragment>
     )
@@ -22,6 +24,7 @@ function JewelryDetail(props) {
 
 JewelryDetail.propTypes = {
     jewerly: PropTypes.object,
+    whenSaleClicked: PropTypes.func,
 }
 
 export default JewelryDetail;

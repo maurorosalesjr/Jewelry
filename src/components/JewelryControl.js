@@ -28,16 +28,37 @@ class JewelryControl extends React.Component {
     this.setState({selectedJewelry: selectedJewelry});
   }
 
+  handleQuantitySub = (id) => {
+    const sellJewel = this.state.mainJewelryList.filter(jewelry => jewelry.id ===id)[0];
+
+    if(sellJewel.quantity > 0) {
+      const sold= sellJewel.quantity -1;
+      const soldJewel = {...sellJewel, quantity: sold}
+      const newMainJewelryList = this.state.mainJewelryList.filter(jewelry => jewelry.id !== id).concat(soldJewel)
+        this.setState({
+          mainJewelryList: newMainJewelryList,
+          selectedJewelry: null,
+        });
+    } else {
+      const newMainJewelryList = this.state.mainJewelryList.filter(jewelry => jewelry.id !== id);
+      this.setState({
+        mainJewelryList: newMainJewelryList,
+        selectedJewelry: null,
+      })
+    }
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.selectedJewelry != null) {
       currentlyVisibleState = <JewelryDetail jewerly={this.state.selectedJewelry}
-                              />
+                                              onClickingSubtract = {this.handleQuantitySub} />
       buttonText = "Back"
     } else {
       currentlyVisibleState = <JewelryList jewelryList={this.state.mainJewelryList}
-                                            onJewelrySelection={this.handleChangingSelectedJewelry} />;
+                                            onJewelrySelection={this.handleChangingSelectedJewelry} 
+                                            onClickingSubtract = {this.handleQuantitySub} />;
       buttonText = "this button does nothing"
     }
 
