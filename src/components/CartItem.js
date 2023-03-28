@@ -24,7 +24,7 @@ function CartItem({ jewelry, onUpdateCartQty, onRemoveFromCart}) {
                 </div>
                 <div className="cart-item_details-price">{jewelry.line_total.formated_with_symbol}</div>
             </div>
-            
+            <button className="cart-item_remove" onClick={handleRemoveFromCart}>Remove</button>
         </div>
 
 
@@ -32,9 +32,11 @@ function CartItem({ jewelry, onUpdateCartQty, onRemoveFromCart}) {
 
 };
 
+export default CartItem;
+
 CartItem.propTypes = {
     jewelry: PropTypes.object,
     handleUpdateCartQty: PropTypes.func,
     onUpdateCartQty: () => {},
     onRemoveFromCart: () => {},
-}
+};
