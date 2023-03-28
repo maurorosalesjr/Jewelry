@@ -13,9 +13,9 @@ function Jewelry(props) {
     return(
         <React.Fragment>
             <div className="card">
-            <div className="card-body" onClick={() => props.whenJewelryClicked(props.id)}>
+            <div onClick={() => props.whenJewelryClicked(props.id)}>
                 <img style={imgStyle} src={props.photo} alt={props.altTag} />
-                <p className="card-title"><em>{props.name}</em></p> 
+                <p><em>{props.name}</em></p> 
             </div>
             </div>
         </React.Fragment>
