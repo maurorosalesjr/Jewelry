@@ -13,7 +13,7 @@ function JewelryList (props) {
                     name={jewelry.name}
                     desc={jewelry.desc}
                     price={jewelry.price}
-                    img={jewelry.img}
+                    photo={jewelry.photo}
                     altTag={jewelry.altTag}
                     quantity={jewelry.quantity}
                     id={jewelry.id}

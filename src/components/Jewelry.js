@@ -20,12 +20,12 @@ function Jewelry(props) {
 }
 
 
-Jewelry.PropTypes = {
+Jewelry.propTypes = {
     category: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    img: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
     altTag: PropTypes.string.isRequired,
     quantity: PropTypes.number.isRequired,
     id: PropTypes.string,

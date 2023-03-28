@@ -1,8 +1,7 @@
 import React from "react";
-import Jewelry from "./Jewelry";
-import JewelryCategory from "./JewelryCategory";
+// import JewelryCategory from "./JewelryCategory";
 import JewelryDetail from "./JewelryDetail";
-import JewelryList from "./JewelryList;";
+import JewelryList from "./JewelryList";
 import mainJewelryList from "./MainJewelryList";
 
 class JewelryControl extends React.Component {
@@ -34,18 +33,23 @@ class JewelryControl extends React.Component {
     if (this.state.selectedJewelry != null) {
       currentlyVisibleState = <JewelryDetail jewerly={this.state.selectedJewelry}
                               />
+      buttonText = "Back"
     } else {
       currentlyVisibleState = <JewelryList jewelryList={this.state.mainJewelryList}
                                             onJewelrySelection={this.handleChangingSelectedJewelry} />;
+      buttonText = "idk what this button does"
     }
 
 
     return (
       <React.Fragment>
-
+        {currentlyVisibleState}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
 
   
 }
+
+export default JewelryControl;
