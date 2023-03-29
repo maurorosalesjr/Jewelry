@@ -1,16 +1,19 @@
 import React, {useState} from "react";
 import PropTypes from 'prop-types';
+import Jewelry from "./Jewelry";
 
 
 function Cart(props) {
+    const jewel = props;
     const [jewelry, setJewelry] = useState([]);
+    
 
-    const addJewelry = (jewelry) => {
-        setJewelry([...jewelry, jewelry]);
+    const addJewelry = (props) => {
+        setJewelry([...jewelry, props]);
     }
 
-    const removeJewelry = (jewelry) => {
-        const newJewelry = jewelry.filter((i) => i !== jewelry);
+    const removeJewelry = (props) => {
+        const newJewelry = jewelry.filter((i) => i !== props);
         setJewelry(newJewelry);
     }
     
@@ -19,10 +22,11 @@ function Cart(props) {
     return (
         <React.Fragment>
         <div>
+            <h1>Your Shopping Cart!</h1>
             {jewelry.map((jewelry) => (
                 <div key={jewelry.id}>
                 <p>{jewelry.name} - ${jewelry.price}</p>
-                <button onClick={() => removeJewelry(jewelry)}>Remove Item</button>
+                <button onClick={() => removeJewelry(jewel)}>Remove Item</button>
                 </div>
             ))}
             <p>Total Price: ${totalPrice}</p>

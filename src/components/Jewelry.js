@@ -12,10 +12,12 @@ const imgStyle ={
 
 function Jewelry(props) {
     const [jewelry, setJewelry] = useState([]);
+
     const addJewelry = (jewelry) => {
         setJewelry([...jewelry, jewelry]);
         console.log("reached!")
     }
+
     return(
         <React.Fragment>
             <div onClick={() => props.whenJewelryClicked(props.id)}>
@@ -24,7 +26,7 @@ function Jewelry(props) {
                 <p>Only {props.quantity} left</p>
             </div>
             <button onClick={()=> addJewelry(props.id) }>Add to Cart!</button>
-            <Cart jewelry={props} />
+            {/* <Cart jewelry={props} /> */}
             <hr />
         </React.Fragment>
     )

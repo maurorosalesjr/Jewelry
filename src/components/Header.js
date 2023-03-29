@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const headerStyle = {
@@ -21,10 +22,11 @@ const headerFluff = {
 function Header(){
     return(
         <React.Fragment>
+            <script src="https://kit.fontawesome.com/db902ae8dc.js" crossOrigin="anonymous"></script>
             <div style={headerStyle} >
                 <h1 style={headerName}>Tina Marie Jewelry</h1>
                 {/* placeholders down */}
-                <h5 style={headerFluff}>Instagram Etsy Ebay</h5>
+                <h5 style={headerFluff}>Instagram <i className="fa-brands fa-etsy" style={{color: "#a23cf0"}}></i>  Ebay</h5>
             </div>
         </React.Fragment>
     )
