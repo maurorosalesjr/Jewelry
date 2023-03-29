@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Jewelry from "./Jewelry";
+import Cart from "./Cart";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function JewelryList (props) {

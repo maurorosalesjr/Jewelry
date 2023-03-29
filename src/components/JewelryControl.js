@@ -74,6 +74,7 @@ class JewelryControl extends React.Component {
     let buttonText = null;
     if (this.state.selectedJewelry != null) {
       currentlyVisibleState = <JewelryDetail jewerly={this.state.selectedJewelry}
+                                              onClickingAddToCart={this.addJewelry}
                                               onClickingSubtract = {this.handleQuantitySub} />
       buttonText = "Back"
     } else if(this.state.cartView) {
@@ -83,6 +84,7 @@ class JewelryControl extends React.Component {
       currentlyVisibleState = <JewelryList jewelryList={this.state.mainJewelryList}
                                             onJewelrySelection={this.handleChangingSelectedJewelry} 
                                             onClickingSubtract = {this.handleQuantitySub} 
+                                            onClickingAddToCart={this.handleQuantitySub}
                                             onClickingCart = {this.handleCartView}/>;
                                             buttonText="Nothing"
     }
