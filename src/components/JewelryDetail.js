@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 
 const deetStyle = {
@@ -17,6 +17,11 @@ const imgStyle = {
 
 function JewelryDetail(props) {
     const { jewerly, } = props;
+    const [jewelry, setJewelry] = useState([]);
+    const addJewelry = (jewelry) => {
+        setJewelry([...jewelry, jewelry]);
+        console.log("reached!")
+    }
 
 
     return(
@@ -30,7 +35,7 @@ function JewelryDetail(props) {
                 <p>{jewerly.desc}</p>
                 <p><em>${jewerly.price}</em></p>
                 <p>Only {jewerly.quantity} {jewerly.name}s in stock</p>
-                {/* <button onClick={()=> whenSaleClicked(jewerly.id)}>Quick Buy</button> */}
+                <button onClick={()=>  addJewelry(jewerly.id)}>Add to Cart</button> 
             </div>
         </React.Fragment>
     )
