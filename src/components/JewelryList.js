@@ -13,6 +13,8 @@ const imgStyle ={
 function JewelryList(props) {
     const [showDetail, setShowDetail] = useState(false);
 
+  
+
     return (
         <div>
         <h2>Jewelry Items</h2>
@@ -26,6 +28,7 @@ function JewelryList(props) {
             
             {showDetail ? (
                 <JewelryDetail />
+                // <button onClick={() =>setShowDetail(showDetail)}>Back</button>
             ) : (
                 <button onClick={() =>setShowDetail(!showDetail)}>Details</button>
             )}
