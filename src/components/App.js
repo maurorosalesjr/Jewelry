@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import JewelryControl from "./JewelryControl";
+import Footer from "./Footer"
 import PropTypes from "prop-types"
 
 const bodyStyle = {
@@ -21,6 +22,7 @@ function App() {
       <JewelryControl  />
       <hr/>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

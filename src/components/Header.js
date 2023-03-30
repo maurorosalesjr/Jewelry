@@ -10,6 +10,7 @@ const headerStyle = {
 }
 
 const headerName = {
+    marginTop: "5%",
     textAlign: "left",
     marginLeft: "2%",
 }

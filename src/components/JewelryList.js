@@ -5,9 +5,10 @@ import "./ButtonCss.css";
 
 
 const imgStyle ={
-    maxWidth: "20%",
+    maxWidth: "30%",
     display: "block",
     align: "left",
+    width: "100%"
     }
 
 const genStyle = {

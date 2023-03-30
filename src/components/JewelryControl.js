@@ -2,12 +2,14 @@ import React, {useState} from "react";
 // import JewelryCategory from "./JewelryCategory";
 import JewelryDetail from "./JewelryDetail";
 import JewelryList from "./JewelryList";
-import Cart from "./Cart"
-import 'bootstrap/dist/css/bootstrap.min.css'
-import "./ButtonCss.css"
+import Cart from "./Cart";
+import AboutMe from "./AboutMe"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./ButtonCss.css";
 
 const cartButton = {
-  marginLeft: "85%",
+  // marginLeft: "40rem",
+  float: "right",
   marginRight: "5%",
 }
 
@@ -16,7 +18,7 @@ function JewelryControl() {
 
   const [jewelry, setJewelry] = useState([]);
   const [showCart, setShowCart] = useState(false);
- 
+
 
   // Add a jewelry item to the shopping cart
   const addToCart = (jewelryItem) => {
@@ -34,7 +36,7 @@ function JewelryControl() {
 
   return (
     <div>
-      <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>Cart</button>
+      <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>View Cart</button>
       {showCart ? (
         <Cart jewelry={jewelry} removeFromCart={removeFromCart} totalPrice={totalPrice} />
       ) : (
