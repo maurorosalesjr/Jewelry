@@ -11,6 +11,7 @@ function JewelryControl() {
 
   const [jewelry, setJewelry] = useState([]);
   const [showCart, setShowCart] = useState(false);
+ 
 
   // Add a jewelry item to the shopping cart
   const addToCart = (jewelryItem) => {
@@ -28,13 +29,13 @@ function JewelryControl() {
 
   return (
     <div>
-      <h1>My Jewelry Store</h1>
       <button onClick={() => setShowCart(!showCart)}>Cart</button>
       {showCart ? (
         <Cart jewelry={jewelry} removeFromCart={removeFromCart} totalPrice={totalPrice} />
       ) : (
         <JewelryList addToCart={addToCart} />
       )}
+    
     </div>
   );
 }

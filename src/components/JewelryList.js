@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import mainJewelryList  from './MainJewelryList';
+import JewelryDetail from './JewelryDetail';
 
 
 const imgStyle ={
@@ -10,6 +11,8 @@ const imgStyle ={
 
 
 function JewelryList(props) {
+    const [showDetail, setShowDetail] = useState(false);
+
     return (
         <div>
         <h2>Jewelry Items</h2>
@@ -20,6 +23,12 @@ function JewelryList(props) {
             <p>{jewelryItem.name} - ${jewelryItem.price}</p>
 
             <button onClick={() => props.addToCart(jewelryItem)}>Add to Cart</button>
+            
+            {showDetail ? (
+                <JewelryDetail />
+            ) : (
+                <button onClick={() =>setShowDetail(!showDetail)}>Details</button>
+            )}
             </div>
         ))}
         </div>
