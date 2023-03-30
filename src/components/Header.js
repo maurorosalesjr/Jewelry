@@ -1,4 +1,7 @@
 import React from "react";
+import insta from "./../img/insta.png";
+import etsy from "./../img/etsy.png";
+import ebay from "./../img/ebay.png";
 
 
 const headerStyle = {
@@ -17,7 +20,14 @@ const headerFluff = {
     marginTop: "-4%",
 }
 
+const socialStyle = {
+    maxWidth: "4%",
+    maxHieght: "auto",
+}
 
+const socialStyle2 = {
+    maxWidth: "3%",
+}
 function Header(){
     return(
         <React.Fragment>
@@ -25,10 +35,14 @@ function Header(){
             <div style={headerStyle} >
                 <h1 style={headerName}>Tina Marie Jewelry</h1>
                 {/* placeholders down */}
-                <h5 style={headerFluff}>Instagram <i className="fa-brands fa-etsy" style={{color: "#a23cf0"}}></i>  Ebay</h5>
+                <h5 style={headerFluff}>
+                    <a href="https://www.instagram.com/tina_maries_jewelry/?igshid=YmMyMTA2M2Y%3D" ><img src={insta} style={socialStyle} alt="link to Instagram" /></a> 
+                    <a href="https://www.etsy.com/shop/TinaMariesJewelry" ><img src={etsy} style={socialStyle2} alt="link to Etsy"/></a>
+                    <a href="https://www.ebay.com/usr/tina_maries_jewelry" ><img src={ebay} style={socialStyle} alt="link to Ebay"/></a></h5>
             </div>
         </React.Fragment>
     )
 }
+
 
 export default Header;
