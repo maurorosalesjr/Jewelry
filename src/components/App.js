@@ -4,14 +4,21 @@ import JewelryControl from "./JewelryControl";
 import PropTypes from "prop-types"
 
 const bodyStyle = {
-  marginTop: "3%",
+  paddingTop: "3%",
+  paddingLeft: "3%",
+  paddingRight: "3%",
+
+}
+
+const background = {
+  backgroundColor: "#d8b1f7"
 }
 function App() {
   return (
     <React.Fragment>
       <Header />
       <div style={bodyStyle}>
-      <JewelryControl />
+      <JewelryControl  />
       <hr/>
       </div>
     </React.Fragment>

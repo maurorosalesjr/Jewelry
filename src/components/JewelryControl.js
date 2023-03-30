@@ -2,9 +2,14 @@ import React, {useState} from "react";
 // import JewelryCategory from "./JewelryCategory";
 import JewelryDetail from "./JewelryDetail";
 import JewelryList from "./JewelryList";
-import mainJewelryList from "./MainJewelryList";
 import Cart from "./Cart"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import "./ButtonCss.css"
+
+const cartButton = {
+  marginLeft: "85%",
+  marginRight: "5%",
+}
 
 function JewelryControl() {
   
@@ -29,7 +34,7 @@ function JewelryControl() {
 
   return (
     <div>
-      <button onClick={() => setShowCart(!showCart)}>Cart</button>
+      <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>Cart</button>
       {showCart ? (
         <Cart jewelry={jewelry} removeFromCart={removeFromCart} totalPrice={totalPrice} />
       ) : (
