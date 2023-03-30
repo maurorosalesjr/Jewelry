@@ -36,10 +36,10 @@ function Header(){
             <div style={headerStyle} >
                 <h1 style={headerName}>Tina Marie Jewelry</h1>
                 {/* placeholders down */}
-                <h5 style={headerFluff}>
-                    <a href="https://www.instagram.com/tina_maries_jewelry/?igshid=YmMyMTA2M2Y%3D" ><img src={insta} style={socialStyle} alt="link to Instagram" /></a> 
+                    <div style={headerFluff}><a href="https://www.instagram.com/tina_maries_jewelry/?igshid=YmMyMTA2M2Y%3D" ><img src={insta} style={socialStyle} alt="link to Instagram" /></a> 
                     <a href="https://www.etsy.com/shop/TinaMariesJewelry" ><img src={etsy} style={socialStyle2} alt="link to Etsy"/></a>
-                    <a href="https://www.ebay.com/usr/tina_maries_jewelry" ><img src={ebay} style={socialStyle} alt="link to Ebay"/></a></h5>
+                    <a href="https://www.ebay.com/usr/tina_maries_jewelry" ><img src={ebay} style={socialStyle} alt="link to Ebay"/></a></div>
+                    
             </div>
         </React.Fragment>
     )

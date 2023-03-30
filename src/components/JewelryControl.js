@@ -8,9 +8,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./ButtonCss.css";
 
 const cartButton = {
-  // marginLeft: "40rem",
   float: "right",
-  marginRight: "5%",
+  right: "5%",
+}
+
+const aboutStyle = {
+  float: "right",
+  right: "5%",
 }
 
 function JewelryControl() {
@@ -18,6 +22,7 @@ function JewelryControl() {
 
   const [jewelry, setJewelry] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [showMe, setShowMe] = useState(false);
 
 
   // Add a jewelry item to the shopping cart
@@ -36,6 +41,12 @@ function JewelryControl() {
 
   return (
     <div>
+      
+      {showMe ? (
+        <AboutMe  />
+      ): (
+        <button class="about" style={aboutStyle} onClick={() => setShowMe(!showMe)}>About Me!</button> 
+      )}
       <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>View Cart</button>
       {showCart ? (
         <Cart jewelry={jewelry} removeFromCart={removeFromCart} totalPrice={totalPrice} />
