@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 // import JewelryCategory from "./JewelryCategory";
 import JewelryDetail from "./JewelryDetail";
 import JewelryList from "./JewelryList";
@@ -6,100 +6,37 @@ import mainJewelryList from "./MainJewelryList";
 import Cart from "./Cart"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-class JewelryControl extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mainJewelryList: mainJewelryList,
-      selectedJewelry: null,
-      cartView: false,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
+function JewelryControl() {
   
-  handleClick = () => {
-    if(this.state.selectedJewelry != null){
-      this.setState({
-        selectedJewelry: null,
-        cartVeiw: false,
-      })
-    } else {
-      this.setState(prevState => ({
-        cartVeiw: !prevState.cartVeiw,
-      }));
-    }
+
+  const [jewelry, setJewelry] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+
+  // Add a jewelry item to the shopping cart
+  const addToCart = (jewelryItem) => {
+    setJewelry([...jewelry, jewelryItem]);
   }
 
-  handleChangingSelectedJewelry = (id) => {
-    const selectedJewelry = this.state.mainJewelryList.filter(jewelry => jewelry.id === id)[0];
-    this.setState({selectedJewelry: selectedJewelry});
+  // Remove a jewelry item from the shopping cart
+  const removeFromCart = (jewelryItem) => {
+    const newJewelry = jewelry.filter((j) => j !== jewelryItem);
+    setJewelry(newJewelry);
   }
 
-  handleQuantitySub = (id) => {
-    const sellJewel = this.state.mainJewelryList.filter(jewelry => jewelry.id ===id)[0];
-    if(sellJewel.quantity > 0) {
-      const sold= sellJewel.quantity -1;
-      const soldJewel = {...sellJewel, quantity: sold}
-      const newMainJewelryList = this.state.mainJewelryList.filter(jewelry => jewelry.id !== id).concat(soldJewel)
-        this.setState({
-          mainJewelryList: newMainJewelryList,
-          selectedJewelry: null,
-        });
-    } else {
-      const newMainJewelryList = this.state.mainJewelryList.filter(jewelry => jewelry.id !== id);
-      this.setState({
-        mainJewelryList: newMainJewelryList,
-        selectedJewelry: null,
-      })
-    }
-  }
+  // Calculate the total price of all jewelry items in the shopping cart
+  const totalPrice = jewelry.reduce((acc, curr) => acc + curr.price, 0);
 
-  handleCartView = () => {
-    const newCart = this.state.cartView;
-    console.log("cart view reached")
-    this.setState({
-      cartView: newCart,
-      selectedJewelry: null,
-    });
-  }
-
-  addJewelry = (jewelry) => {
-    this.setState([...jewelry, jewelry]);
-    console.log("added jewelry!")
-}
-
-  render(){
-    let currentlyVisibleState = null;
-    let buttonText = null;
-    if (this.state.selectedJewelry != null) {
-      currentlyVisibleState = <JewelryDetail jewerly={this.state.selectedJewelry}
-                                              onClickingAddToCart={this.addJewelry}
-                                              onClickingSubtract = {this.handleQuantitySub} />
-      buttonText = "Back"
-    } else if(this.state.cartView) {
-      currentlyVisibleState = <Cart cart={this.state.cartView} />
-      buttonText = "Checkout"
-    } else {
-      currentlyVisibleState = <JewelryList jewelryList={this.state.mainJewelryList}
-                                            onJewelrySelection={this.handleChangingSelectedJewelry} 
-                                            onClickingSubtract = {this.handleQuantitySub} 
-                                            onClickingAddToCart={this.handleQuantitySub}
-                                            onClickingCart = {this.handleCartView}/>;
-                                            buttonText="Nothing"
-    }
-
-
-    return (
-      <React.Fragment>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
-        <button onClick={this.handleCartView}>Cart</button>
-      </React.Fragment>
-    );
-  }
-
-  
+  return (
+    <div>
+      <h1>My Jewelry Store</h1>
+      <button onClick={() => setShowCart(!showCart)}>Cart</button>
+      {showCart ? (
+        <Cart jewelry={jewelry} removeFromCart={removeFromCart} totalPrice={totalPrice} />
+      ) : (
+        <JewelryList addToCart={addToCart} />
+      )}
+    </div>
+  );
 }
 
 export default JewelryControl;

@@ -1,36 +1,29 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Jewelry from "./Jewelry";
-import Cart from "./Cart";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react';
+import mainJewelryList  from './MainJewelryList';
 
-function JewelryList (props) {
+
+const imgStyle ={
+    maxWidth: "15%",
+    display: "block",
+    align: "left",
+    }
+
+
+function JewelryList(props) {
     return (
-        <React.Fragment>
-            {props.jewelryList.map((jewelry) =>
-                <Jewelry 
-                    whenJewelryClicked={props.onJewelrySelection}
-                    whenSaleClicked={props.onClickingSubtract}
-                    category={jewelry.category}
-                    name={jewelry.name}
-                    desc={jewelry.desc}
-                    price={jewelry.price}
-                    photo={jewelry.photo}
-                    altTag={jewelry.altTag}
-                    quantity={parseInt(jewelry.quantity)}
-                    id={jewelry.id}
-                    key={jewelry.id} />
-                    )               
-            }
-        </React.Fragment>
+        <div>
+        <h2>Jewelry Items</h2>
+        {mainJewelryList.map((jewelryItem) => (
+            
+            <div key={jewelryItem.id}>
+            <img style={imgStyle} src={jewelryItem.photo} alt={jewelryItem.altTag} />
+            <p>{jewelryItem.name} - ${jewelryItem.price}</p>
+
+            <button onClick={() => props.addToCart(jewelryItem)}>Add to Cart</button>
+            </div>
+        ))}
+        </div>
     );
-}
-
-JewelryList.propTypes = {
-    jewelryList: PropTypes.array,
-    onJewelrySelection: PropTypes.func,
-    onSaleClicked: PropTypes.func,
-
-}
+    }
 
 export default JewelryList;
