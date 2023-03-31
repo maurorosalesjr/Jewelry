@@ -19,7 +19,8 @@ const title = {
 }
 
 const body = {
-    margin: "15%",
+    marginLeft: "15%",
+    marginRight: "15%",
 }
 
 const lowCount = {
@@ -34,7 +35,6 @@ function JewelryDetail(props) {
             <h2 style={title} >{props.item.name}</h2>
             <img style={imgStyle2} src={props.item.photo} alt={props.item.altTag} />
                 <div style={body} >
-                    {/* <p><em style={lowCount}>${props.item.price}- only {props.item.quantity} left!</em></p> */}
                     {props.item.quantity > 5 ? ( <p><em>${props.item.price}- only {props.item.quantity} left!</em></p>
                     ) : (<p><em style={lowCount}>${props.item.price}- only {props.item.quantity} left!</em></p>
                     )}
