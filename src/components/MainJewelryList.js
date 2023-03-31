@@ -3,6 +3,14 @@ import bracelet1 from "./../img/bracelet1.JPEG";
 import bracelet2 from "./../img/bracelet2.JPEG";
 import necklace1 from "./../img/necklace1.JPEG";
 import ring1 from "./../img/ring1.JPEG";
+import necklace2 from "./../img/necklace2.JPEG";
+import bracelet3 from "./../img/bracelet3.JPEG";
+import bracelet4 from "./../img/bracelet4.JPEG";
+import bracelet5 from "./../img/bracelet5.JPEG";
+import bracelet6 from "./../img/bracelet6.JPEG";
+import bracelet7 from "./../img/bracelet7.JPEG";
+import bracelet8 from "./../img/bracelet8.JPEG";
+import bracelet9 from "./../img/bracelet9.JPEG";
 
 
 let mainJewelryList = [
@@ -46,7 +54,86 @@ let mainJewelryList = [
         quantity: 5,
         id: v4()
     },
-
+    {
+        category: "Necklace",
+        name: "Cool Necklace",
+        desc: "This is the description for this cool jewelry item, wow, these stats are pretty dope. i want to make this pretty long so i can see how the styling takes over. So we will see how this works out, hope it looks good!",
+        price: 20,
+        photo: necklace2,
+        altTag: "pretty ring",
+        quantity: 5,
+        id: v4()
+    },
+    {
+        category: "Bracelet",
+        name: "Cool Bracelet",
+        desc: "This is the description for this cool jewelry item, wow, these stats are pretty dope. i want to make this pretty long so i can see how the styling takes over. So we will see how this works out, hope it looks good!",
+        price: 20,
+        photo: bracelet3,
+        altTag: "pretty ring",
+        quantity: 5,
+        id: v4()
+    },
+    {
+        category: "Bracelet",
+        name: "Cool Bracelet",
+        desc: "This is the description for this cool jewelry item, wow, these stats are pretty dope. i want to make this pretty long so i can see how the styling takes over. So we will see how this works out, hope it looks good!",
+        price: 20,
+        photo: bracelet4,
+        altTag: "pretty ring",
+        quantity: 5,
+        id: v4()
+    },
+    {
+        category: "Bracelet",
+        name: "Cool Bracelet",
+        desc: "This is the description for this cool jewelry item, wow, these stats are pretty dope. i want to make this pretty long so i can see how the styling takes over. So we will see how this works out, hope it looks good!",
+        price: 20,
+        photo: bracelet5,
+        altTag: "pretty ring",
+        quantity: 5,
+        id: v4()
+    },
+    {
+        category: "Bracelet",
+        name: "Cool Bracelet",
+        desc: "This is the description for this cool jewelry item, wow, these stats are pretty dope. i want to make this pretty long so i can see how the styling takes over. So we will see how this works out, hope it looks good!",
+        price: 20,
+        photo: bracelet6,
+        altTag: "pretty ring",
+        quantity: 5,
+        id: v4()
+    },
+    {
+        category: "Bracelet",
+        name: "Cool Bracelet",
+        desc: "This is the description for this cool jewelry item, wow, these stats are pretty dope. i want to make this pretty long so i can see how the styling takes over. So we will see how this works out, hope it looks good!",
+        price: 20,
+        photo: bracelet7,
+        altTag: "pretty ring",
+        quantity: 5,
+        id: v4()
+    },
+    {
+        category: "Bracelet",
+        name: "Cool Bracelet",
+        desc: "This is the description for this cool jewelry item, wow, these stats are pretty dope. i want to make this pretty long so i can see how the styling takes over. So we will see how this works out, hope it looks good!",
+        price: 20,
+        photo: bracelet8,
+        altTag: "pretty ring",
+        quantity: 5,
+        id: v4()
+    },
+    {
+        category: "Bracelet",
+        name: "Cool Bracelet",
+        desc: "This is the description for this cool jewelry item, wow, these stats are pretty dope. i want to make this pretty long so i can see how the styling takes over. So we will see how this works out, hope it looks good!",
+        price: 20,
+        photo: bracelet9,
+        altTag: "pretty ring",
+        quantity: 5,
+        id: v4()
+    },
 ]
 
 export default mainJewelryList;

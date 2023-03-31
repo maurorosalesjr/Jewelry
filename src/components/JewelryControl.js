@@ -42,13 +42,23 @@ function JewelryControl() {
   return (
     <div>
       
-      {showMe ? (
+      {/* {showMe ? (
         <AboutMe  />
       ): (
         <button class="about" style={aboutStyle} onClick={() => setShowMe(!showMe)}>About Me!</button> 
       )}
       <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>View Cart</button>
       {showCart ? (
+        <Cart jewelry={jewelry} removeFromCart={removeFromCart} totalPrice={totalPrice} />
+      ) : (
+        <JewelryList addToCart={addToCart} />
+      )} */}
+
+      <button class="about" style={aboutStyle} onClick={() => setShowMe(!showMe)}>About Me!</button> 
+      <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>View Cart</button>
+      {showMe ? (
+        <AboutMe />
+      ): showCart ? (
         <Cart jewelry={jewelry} removeFromCart={removeFromCart} totalPrice={totalPrice} />
       ) : (
         <JewelryList addToCart={addToCart} />
@@ -59,3 +69,6 @@ function JewelryControl() {
 }
 
 export default JewelryControl;
+
+
+
