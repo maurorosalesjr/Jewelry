@@ -131,7 +131,7 @@ let mainJewelryList = [
         price: 20,
         photo: bracelet9,
         altTag: "pretty ring",
-        quantity: 5,
+        quantity: 3,
         id: v4()
     },
 ]

@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 // import JewelryCategory from "./JewelryCategory";
-import JewelryDetail from "./JewelryDetail";
 import JewelryList from "./JewelryList";
 import Cart from "./Cart";
 import AboutMe from "./AboutMe"
@@ -21,19 +20,22 @@ function JewelryControl() {
   
 
   const [jewelry, setJewelry] = useState([]);
+  const [totalItems, setTotalItems] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [showMe, setShowMe] = useState(false);
 
 
   // Add a jewelry item to the shopping cart
   const addToCart = (jewelryItem) => {
-    setJewelry([...jewelry, jewelryItem]);
+    setJewelry(prevJewelryItems=>[...prevJewelryItems, jewelryItem]);
+    setTotalItems(prevTotalItems => prevTotalItems + 1);
   }
 
   // Remove a jewelry item from the shopping cart
   const removeFromCart = (jewelryItem) => {
     const newJewelry = jewelry.filter((j) => j !== jewelryItem);
     setJewelry(newJewelry);
+    setTotalItems(prevTotalItems => prevTotalItems - 1);
   }
 
   // Calculate the total price of all jewelry items in the shopping cart
@@ -41,21 +43,11 @@ function JewelryControl() {
 
   return (
     <div>
-      
-      {/* {showMe ? (
-        <AboutMe  />
-      ): (
-        <button class="about" style={aboutStyle} onClick={() => setShowMe(!showMe)}>About Me!</button> 
-      )}
-      <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>View Cart</button>
-      {showCart ? (
-        <Cart jewelry={jewelry} removeFromCart={removeFromCart} totalPrice={totalPrice} />
-      ) : (
-        <JewelryList addToCart={addToCart} />
-      )} */}
-
       <button class="about" style={aboutStyle} onClick={() => setShowMe(!showMe)}>About Me!</button> 
-      <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>View Cart</button>
+      <button style={cartButton} class="button-64" onClick={() => setShowCart(!showCart)}>View Cart({totalItems})</button>
+      <br />
+      <br />
+      <hr />
       {showMe ? (
         <AboutMe />
       ): showCart ? (
@@ -63,7 +55,6 @@ function JewelryControl() {
       ) : (
         <JewelryList addToCart={addToCart} />
       )}
-    
     </div>
   );
 }

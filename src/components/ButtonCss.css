@@ -16,7 +16,8 @@
     font-size: 55%;
     justify-content: center;
     line-height: 2em;
-    max-width: 5rem;
+    max-width: 6rem;
+    width: 100%;
     min-width: 1rem;
     padding: 3px;
     text-decoration: none;
@@ -67,6 +68,7 @@
     justify-content: center;
     line-height: 2em;
     max-width: 5rem;
+    width: 100%;
     min-width: 1rem;
     padding: 3px;
     text-decoration: none;
