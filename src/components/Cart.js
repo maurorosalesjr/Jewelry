@@ -12,7 +12,7 @@ const infoClickable = {
     display: "block",
     justifyText: "left",
     marginRight: "1%",
-    marginBottom: "10%",
+    marginBottom: "15%",
     marginLeft: "13%",
     fontFamily: "cursive",
     color: "#a23cf0",
@@ -30,6 +30,12 @@ const headerStyles = {
     textAlign: "center"
 }
 
+const totalStyle = {
+    fontFamily: "cursive",
+    color: "#a23cf0",
+    fontSize: "2rem",
+    marginBottom: "5%",
+}
 
 function Cart(props) {
     // const [totalCartIems, setTotalCartItems] = useState(0);
@@ -51,7 +57,7 @@ function Cart(props) {
                 </div>
             </div>
         ))}
-        <p>Total Price: ${props.totalPrice}</p>
+        <p style={totalStyle}>Total Price: ${props.totalPrice}</p>
         </React.Fragment>
     );
     }
